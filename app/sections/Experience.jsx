@@ -3,13 +3,13 @@ import ExperienceTab from "../components/ExperienceTab";
 
 export default function Experience() {
   return (
-    <section className="mx-auto max-w-4xl p-2">
+    <section className="mx-auto mb-6 max-w-4xl p-4">
       <div>
         <div className="tabs tabs-lift w-full">
           <input
             type="radio"
             name="my_tabs_3"
-            className="tab flex-1"
+            className="tab flex-1 text-xl font-semibold"
             aria-label="Experience"
           />
           <div className="tab-content bg-base-100 border-base-300 p-2">
@@ -19,7 +19,7 @@ export default function Experience() {
           <input
             type="radio"
             name="my_tabs_3"
-            className="tab flex-1"
+            className="tab flex-1 text-xl font-semibold"
             aria-label="Education"
             defaultChecked
           />

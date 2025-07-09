@@ -1,0 +1,34 @@
+[
+  {
+    "title": "Auto-Tek Website",
+    "description": "A landing page for an auto repair business",
+    "image": "https://res.cloudinary.com/dmkri61cj/image/upload/v1749646154/1_kyia8l.png",
+    "techStack": ["HTML", "Tailwind", "React"],
+    "github": "https://github.com/your-username/auto-tek",
+    "view": "https://auto-tek.example.com"
+  },
+  {
+    "title": "Auto-Tek Website",
+    "description": "A landing page for an auto repair business",
+    "image": "https://res.cloudinary.com/dmkri61cj/image/upload/v1749646154/1_kyia8l.png",
+    "techStack": ["HTML", "Tailwind", "React"],
+    "github": "https://github.com/your-username/auto-tek",
+    "view": "https://auto-tek.example.com"
+  },
+  {
+    "title": "Auto-Tek Website",
+    "description": "A landing page for an auto repair business",
+    "image": "https://res.cloudinary.com/dmkri61cj/image/upload/v1749646154/1_kyia8l.png",
+    "techStack": ["HTML", "Tailwind", "React"],
+    "github": "https://github.com/your-username/auto-tek",
+    "view": "https://auto-tek.example.com"
+  },
+  {
+    "title": "Auto-Tek Website",
+    "description": "A landing page for an auto repair business",
+    "image": "https://res.cloudinary.com/dmkri61cj/image/upload/v1749646154/1_kyia8l.png",
+    "techStack": ["HTML", "Tailwind", "React"],
+    "github": "https://github.com/your-username/auto-tek",
+    "view": "https://auto-tek.example.com"
+  }
+]

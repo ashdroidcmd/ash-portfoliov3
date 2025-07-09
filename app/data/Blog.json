@@ -1,0 +1,37 @@
+[
+  {
+    "title": "Arduino RC Car",
+    "description": "A DIY project building a remote-controlled car using Arduino, motors, and wireless modules.",
+    "image": "https://res.cloudinary.com/dmkri61cj/image/upload/v1749646614/4trafficlight_zni6es.jpg",
+    "url": "https://yourblogsite.com/arduino-rc-car",
+    "tags": ["IoT"]
+  },
+  {
+    "title": "Smart Home Automation",
+    "description": "A project to automate home appliances using IoT devices and a central control system.",
+    "image": "https://res.cloudinary.com/dmkri61cj/image/upload/v1749646614/4trafficlight_zni6es.jpg",
+    "url": "https://yourblogsite.com/smart-home-automation",
+    "tags": ["IoT"]
+  },
+  {
+    "title": "Weather Station",
+    "description": "Building a weather station to monitor temperature, humidity, and atmospheric pressure.",
+    "image": "https://res.cloudinary.com/dmkri61cj/image/upload/v1749646614/4trafficlight_zni6es.jpg",
+    "url": "https://yourblogsite.com/weather-station",
+    "tags": ["IoT"]
+  },
+  {
+    "title": "Weather Station",
+    "description": "Building a weather station to monitor temperature, humidity, and atmospheric pressure.",
+    "image": "https://res.cloudinary.com/dmkri61cj/image/upload/v1749646614/4trafficlight_zni6es.jpg",
+    "url": "https://yourblogsite.com/weather-station",
+    "tags": ["IoT"]
+  },
+  {
+    "title": "Weather Station",
+    "description": "Building a weather station to monitor temperature, humidity, and atmospheric pressure.",
+    "image": "https://res.cloudinary.com/dmkri61cj/image/upload/v1749646614/4trafficlight_zni6es.jpg",
+    "url": "https://yourblogsite.com/weather-station",
+    "tags": ["IoT"]
+  }
+]
