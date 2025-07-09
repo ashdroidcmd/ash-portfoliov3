@@ -1,9 +1,9 @@
-import Hero from "./components/Hero";
-import Experience from "./components/Experience";
-import TechStack from "./components/TechStack";
-import Projects from "./components/Projects";
-import Blog from "./components/Blog";
-import Footer from "./components/Footer";
+import Hero from "./sections/Hero";
+import Experience from "./sections/Experience";
+import TechStack from "./sections/TechStack";
+import Projects from "./sections/Projects";
+import Blog from "./sections/Blog";
+import Footer from "./sections/Footer";
 
 export default function Home() {
   return (
