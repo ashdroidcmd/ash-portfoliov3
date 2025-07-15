@@ -8,12 +8,12 @@ import Footer from "./sections/Footer";
 export default function Home() {
   return (
     <>
-    <Hero />
-    <Experience />
-    <TechStack />
-    <Projects />
-    <Blog />
-    <Footer />
+      <Hero />
+      <Experience />
+      <TechStack />
+      <Projects />
+      <Blog />
+      <Footer />
     </>
   );
 }

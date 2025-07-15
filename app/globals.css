@@ -2,7 +2,7 @@
 @plugin "daisyui";
 
 :root {
-  --font-montserrat: 'Montserrat', sans-serif;
+  --font-montserrat: "Montserrat", sans-serif;
 }
 
 body {
