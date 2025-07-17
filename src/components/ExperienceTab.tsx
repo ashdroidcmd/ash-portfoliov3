@@ -5,6 +5,7 @@ type Experience = {
   date: string;
   jobTitle: string;
   companyName: string;
+  image: string;
 };
 
 const ExperienceTab = () => {
@@ -24,15 +25,29 @@ const ExperienceTab = () => {
       });
   }, []);
 
-  if (loading) return <p className="text-gray-400">Loading...</p>;
-  
+  if (loading) return <p className="text-gray-300">Loading...</p>;
+
   return (
     <section className="space-y-4">
       {experienceData.map((item, index) => (
-        <div key={index} className="border-l-4 border-gray-100 pl-4">
-          <p className="text-sm text-gray-300">{item.date}</p>
-          <h3 className="text-lg font-semibold text-white">{item.jobTitle}</h3>
-          <p className="text-base text-gray-300">{item.companyName}</p>
+        <div
+          key={index}
+          className="flex flex-row items-center justify-start gap-2 border-l-4 border-gray-100 pl-2"
+        >
+          <div>
+            <img
+              src={item.image}
+              alt={item.companyName}
+              className="h-auto w-20 rounded-full"
+            />
+          </div>
+          <div>
+            <p className="text-sm text-gray-300">{item.date}</p>
+            <h3 className="text-lg font-semibold text-white">
+              {item.jobTitle}
+            </h3>
+            <p className="text-base text-gray-300">{item.companyName}</p>
+          </div>
         </div>
       ))}
     </section>

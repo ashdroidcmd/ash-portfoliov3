@@ -11,8 +11,9 @@ const ExAndEducTabs = () => {
             name="my_tabs_3"
             className="tab flex-1 text-xl font-semibold"
             aria-label="Experience"
+            defaultChecked
           />
-          <div className="tab-content bg-base-100 border-base-300 p-2">
+          <div className="tab-content bg-base-100 p-2">
             <ExperienceTab />
           </div>
 
@@ -21,9 +22,8 @@ const ExAndEducTabs = () => {
             name="my_tabs_3"
             className="tab flex-1 text-xl font-semibold"
             aria-label="Education"
-            defaultChecked
           />
-          <div className="tab-content bg-base-100 border-base-300 p-2">
+          <div className="tab-content bg-base-100 p-2">
             <EducationTab />
           </div>
         </div>
