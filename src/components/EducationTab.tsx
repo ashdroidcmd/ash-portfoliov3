@@ -39,7 +39,7 @@ const EducationTab = () => {
             <img
               src={item.image}
               alt={item.school}
-              className="h-auto w-20 rounded-full"
+              className="h-auto w-18 rounded-full"
             />
           </div>
           <div>

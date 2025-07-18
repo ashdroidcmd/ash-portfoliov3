@@ -38,7 +38,7 @@ const ExperienceTab = () => {
             <img
               src={item.image}
               alt={item.companyName}
-              className="h-auto w-20 rounded-full"
+              className="h-auto w-18 rounded-full"
             />
           </div>
           <div>

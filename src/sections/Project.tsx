@@ -34,7 +34,9 @@ const Project = () => {
       {/* Header */}
       <div className="mb-4 flex flex-row items-center">
         <p className="grow text-3xl font-semibold text-white">Projects</p>
-        <button className="btn btn-info">View More</button>
+        <button className="btn btn-outline btn-md rounded-2xl hover:bg-white hover:text-black">
+          View More
+        </button>
       </div>
 
       {/* Cards */}

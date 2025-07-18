@@ -33,10 +33,10 @@ const TechStack = () => {
           {techStack.map((tech, index) => (
             <div
               key={index}
-              className="flex flex-row items-center justify-center gap-2 rounded-sm border border-gray-300 bg-black p-2"
+              className="flex flex-row items-center justify-center gap-2 rounded-4xl border border-gray-500 bg-black px-4 py-1 transition-colors duration-300 hover:bg-gray-800"
             >
               <img src={tech.image} alt={tech.name} className="h-auto w-8" />
-              <p className="text-md text-white">{tech.name}</p>
+              <p className="text-base text-white">{tech.name}</p>
             </div>
           ))}
         </div>
