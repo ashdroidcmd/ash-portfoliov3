@@ -48,7 +48,11 @@ const Hero = () => {
 
       {/* Centered Image Content */}
       <div className="flex flex-1 items-center justify-center">
-        <img src="./profile.jpg" alt="Profile" className="w-60 rounded-full" />
+        <img
+          src="./profile.jpg"
+          alt="Profile"
+          className="w-60 rounded-full border border-gray-500"
+        />
       </div>
     </section>
   );
