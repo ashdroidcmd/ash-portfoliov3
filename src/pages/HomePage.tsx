@@ -1,9 +1,15 @@
-import React from 'react'
+import ExAndEducTabs from "../sections/ExAndEducTabs";
+import TechStack from "../sections/TechStack";
+import Project from "../sections/Project";
 
 const HomePage = () => {
   return (
-    <div>HomePage</div>
-  )
-}
+    <section>
+      <ExAndEducTabs />
+      <TechStack />
+      <Project />
+    </section>
+  );
+};
 
-export default HomePage
+export default HomePage;
