@@ -4,15 +4,13 @@ import Hero from "../sections/Hero";
 
 const MainLayout = () => {
   return (
-    <>
-      <body className="mx-auto max-w-4xl p-4">
-        <main>
-          <Hero />
-          <Outlet />
-        </main>
-        <Footer />
-      </body>
-    </>
+    <div className="mx-auto max-w-4xl p-4">
+      <main>
+        <Hero />
+        <Outlet />
+      </main>
+      <Footer />
+    </div>
   );
 };
 

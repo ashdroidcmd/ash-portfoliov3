@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { getApiUrl } from "../utils/api";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
@@ -16,7 +15,7 @@ const EducationTab = () => {
 
   useEffect(() => {
     axios
-      .get(`${getApiUrl}/education`)
+      .get("http://localhost:5000/education")
       .then((res) => {
         setEducationData(res.data);
         setLoading(false);

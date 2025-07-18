@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { getApiUrl } from "../utils/api";
 import axios from "axios";
 
 type Project = {
@@ -18,7 +17,7 @@ const ProjectCards = () => {
 
   useEffect(() => {
     axios
-      .get(`${getApiUrl}/projects`)
+      .get("http://localhost:5000/projects")
       .then((res) => {
         setProjects(res.data);
         setLoading(false);

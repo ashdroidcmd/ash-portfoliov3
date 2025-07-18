@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { getApiUrl } from "../utils/api";
 import axios from "axios";
 
 type Experience = {
@@ -15,7 +14,7 @@ const ExperienceTab = () => {
 
   useEffect(() => {
     axios
-      .get(`${getApiUrl}/experiences`) 
+      .get("http://localhost:5000/experiences")
       .then((res) => {
         setExperienceData(res.data);
         setLoading(false);

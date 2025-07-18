@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { getApiUrl } from "../utils/api";
 import axios from "axios";
 
 type Tech = {
@@ -13,7 +12,7 @@ const TechStack = () => {
 
   useEffect(() => {
     axios
-      .get(`${getApiUrl}/techstack`)
+      .get("http://localhost:5000/techstack")
       .then((res) => {
         setTechStack(res.data);
         setLoading(false);
