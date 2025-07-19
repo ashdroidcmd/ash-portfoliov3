@@ -39,7 +39,7 @@ const Sidebar: React.FC<SidebarProps> = ({ collapsed }) => {
           )}
         </Link>
       </li><li>
-        <Link title="Projects" to="/">
+        <Link title="Projects" to="projects">
           {collapsed ? (
             <FolderGit2 size={26}/>
           ) : (
