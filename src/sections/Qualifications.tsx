@@ -1,7 +1,7 @@
 import EducationTab from "../components/main/EducationTab";
 import ExperienceTab from "../components/main/ExperienceTab";
 
-const ExAndEducTabs = () => {
+const Qualifications = () => {
   return (
     <>
       <section className="mb-6">
@@ -32,4 +32,4 @@ const ExAndEducTabs = () => {
   );
 };
 
-export default ExAndEducTabs;
+export default Qualifications;

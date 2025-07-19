@@ -8,7 +8,7 @@ type SidebarProps = {
 const Sidebar: React.FC<SidebarProps> = ({ collapsed }) => {
   return (
     <ul
-      className={`menu text-base-content min-h-full space-y-2 border-e border-e-gray-700 bg-zinc-900 p-4 text-xl ${
+      className={`menu text-white min-h-full space-y-2 border-e border-e-gray-700 bg-zinc-900 p-4 text-xl ${
         collapsed ? 'w-20' : 'w-80'
       }`}
     >
@@ -22,7 +22,7 @@ const Sidebar: React.FC<SidebarProps> = ({ collapsed }) => {
         </Link>
       </li>
       <li>
-        <Link title="Qualifications" to="/">
+        <Link title="Qualifications" to="qualifications">
           {collapsed ? (
             <GraduationCap size={26}/>
           ) : (

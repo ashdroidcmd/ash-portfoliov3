@@ -33,7 +33,7 @@ const AdminLayout = () => {
       </div>
 
       {/* Main Content */}
-      <div className={`drawer-content bg-gray-950 text-white`}>
+      <div className={`drawer-content bg-black text-white`}>
         <div className="p-4">
         <Outlet />
         </div>
