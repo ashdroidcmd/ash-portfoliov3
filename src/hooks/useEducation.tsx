@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -60,12 +61,34 @@ export function useEducationApi() {
     }
   };
 
+  const updateEducation = async (id: number, updatedData: any) => {
+    try {
+      const res = await fetch(`http://localhost:5000/education/${id}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(updatedData),
+      });
+
+      if (!res.ok) {
+        throw new Error("Failed to update education");
+      }
+
+      return await res.json();
+    } catch (error) {
+      console.error("Update failed:", error);
+      throw error;
+    }
+  };
+
   return {
     data,
     loading,
     error,
     createEducation,
     deleteEducation,
+    updateEducation,
     refetch: getEducation,
   };
 }

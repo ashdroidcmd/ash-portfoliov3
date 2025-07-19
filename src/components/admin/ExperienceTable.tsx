@@ -1,30 +1,37 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState } from "react";
-import { useEducationApi } from "../../hooks/useEducation";
+import { useExperienceApi } from "../../hooks/useExperience";
+import axios from "axios";
 
-const EducationTable = () => {
-  const { data: educationData, loading, error, deleteEducation, updateEducation } = useEducationApi();
+const ExperienceTable = () => {
+  const {
+    data: experienceData,
+    loading,
+    error,
+    deleteExperience,
+    refetch,
+  } = useExperienceApi();
 
-  const [deleteLoadingId, setDeleteLoadingId] = useState<string | null>(null);
+  const [deleteLoadingId, setDeleteLoadingId] = useState<number | null>(null);
   const [editItem, setEditItem] = useState<any | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editLoading, setEditLoading] = useState(false);
   const [form, setForm] = useState({
-    courseName: "",
-    school: "",
+    companyName: "",
+    jobTitle: "",
+    date: "",
     image: "",
-    url: "",
   });
 
-  const handleDelete = async (id: string) => {
-    if (!window.confirm("Are you sure you want to delete this entry?")) return;
+  const handleDelete = async (id: number) => {
+    if (!window.confirm("Are you sure you want to delete this experience?")) return;
 
     setDeleteLoadingId(id);
     try {
-      await deleteEducation(id);
+      await deleteExperience(id);
     } catch {
-      alert("Failed to delete education entry");
+      alert("Failed to delete experience entry");
     } finally {
       setDeleteLoadingId(null);
     }
@@ -33,10 +40,10 @@ const EducationTable = () => {
   const handleEdit = (item: any) => {
     setEditItem(item);
     setForm({
-      courseName: item.courseName,
-      school: item.school,
+      companyName: item.companyName,
+      jobTitle: item.jobTitle,
+      date: item.date,
       image: item.image,
-      url: item.url,
     });
     setIsModalOpen(true);
   };
@@ -47,7 +54,8 @@ const EducationTable = () => {
 
     setEditLoading(true);
     try {
-      await updateEducation(editItem.id, form);
+      await axios.put(`http://localhost:5000/experiences/${editItem.id}`, form);
+      await refetch();
       setIsModalOpen(false);
     } catch (error) {
       alert("Update failed");
@@ -57,7 +65,7 @@ const EducationTable = () => {
   };
 
   if (loading) return <p className="text-gray-300">Loading...</p>;
-  if (error) return <p className="text-red-500">Failed to load education data.</p>;
+  if (error) return <p className="text-red-500">Failed to load experience data.</p>;
 
   return (
     <>
@@ -67,35 +75,26 @@ const EducationTable = () => {
             <tr>
               <th>ID</th>
               <th>Image</th>
-              <th>Course Name</th>
-              <th>School</th>
-              <th>Certificate</th>
+              <th>Company</th>
+              <th>Job Title</th>
+              <th>Date</th>
               <th>Actions</th>
             </tr>
           </thead>
           <tbody>
-            {educationData.map((item) => (
+            {experienceData.map((item) => (
               <tr key={item.id}>
                 <td>{item.id}</td>
                 <td>
                   <img
                     src={item.image}
-                    alt={item.school}
+                    alt={item.companyName}
                     className="h-16 w-16 rounded-full object-contain border bg-white"
                   />
                 </td>
-                <td className="font-semibold">{item.courseName}</td>
-                <td>{item.school}</td>
-                <td>
-                  <a
-                    href={item.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn btn-sm btn-outline hover:bg-white hover:text-black"
-                  >
-                    View Certificate
-                  </a>
-                </td>
+                <td className="font-semibold">{item.companyName}</td>
+                <td>{item.jobTitle}</td>
+                <td>{item.date}</td>
                 <td>
                   <button
                     className="btn btn-sm btn-error btn-outline hover:bg-red-600 hover:text-white"
@@ -124,21 +123,29 @@ const EducationTable = () => {
             onSubmit={handleUpdateSubmit}
             className="bg-black rounded-lg p-6 w-full max-w-lg space-y-4 border border-gray-500"
           >
-            <h2 className="text-xl text-white font-bold mb-2">Edit Education</h2>
+            <h2 className="text-xl text-white font-bold mb-2">Edit Experience</h2>
             <input
               type="text"
-              placeholder="Course Name"
+              placeholder="Company Name"
               className="input input-bordered w-full"
-              value={form.courseName}
-              onChange={(e) => setForm({ ...form, courseName: e.target.value })}
+              value={form.companyName}
+              onChange={(e) => setForm({ ...form, companyName: e.target.value })}
               required
             />
             <input
               type="text"
-              placeholder="School"
+              placeholder="Job Title"
               className="input input-bordered w-full"
-              value={form.school}
-              onChange={(e) => setForm({ ...form, school: e.target.value })}
+              value={form.jobTitle}
+              onChange={(e) => setForm({ ...form, jobTitle: e.target.value })}
+              required
+            />
+            <input
+              type="text"
+              placeholder="Date"
+              className="input input-bordered w-full"
+              value={form.date}
+              onChange={(e) => setForm({ ...form, date: e.target.value })}
               required
             />
             <input
@@ -147,14 +154,6 @@ const EducationTable = () => {
               className="input input-bordered w-full"
               value={form.image}
               onChange={(e) => setForm({ ...form, image: e.target.value })}
-              required
-            />
-            <input
-              type="url"
-              placeholder="Certificate URL"
-              className="input input-bordered w-full"
-              value={form.url}
-              onChange={(e) => setForm({ ...form, url: e.target.value })}
               required
             />
 
@@ -181,4 +180,4 @@ const EducationTable = () => {
   );
 };
 
-export default EducationTable;
+export default ExperienceTable;
