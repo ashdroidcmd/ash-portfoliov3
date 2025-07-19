@@ -31,7 +31,7 @@ const Sidebar: React.FC<SidebarProps> = ({ collapsed }) => {
         </Link>
       </li>
       <li>
-        <Link title="Tech Stack" to="/">
+        <Link title="Tech Stack" to="tech-stack">
           {collapsed ? (
             <Code size={26}/>
           ) : (

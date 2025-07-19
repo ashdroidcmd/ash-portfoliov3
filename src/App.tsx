@@ -11,6 +11,7 @@ import ProjectPage from "./pages/main/ProjectPage";
 import AdminLayout from "./layout/AdminLayout";
 import Dashboard from "./pages/admin/Dashboard";
 import QualificationsPage from "./pages/admin/QualificationsPage";
+import TechStackPage from "./pages/admin/TechStackPage";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route path="/123456" element={<AdminLayout />}>
             <Route index element={<Dashboard />} />
             <Route path="qualifications" element={<QualificationsPage />} />
+            <Route path="tech-stack" element={<TechStackPage />} />
           </Route>
         </Routes>
       </BrowserRouter>
