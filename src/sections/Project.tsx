@@ -1,4 +1,4 @@
-import ProjectCards from "../components/ProjectCards";
+import ProjectCards from "../components/main/ProjectCards";
 import { Link } from "react-router-dom";
 
 const Project = () => {
