@@ -17,18 +17,25 @@ const ProjectCards: React.FC<ProjectCardsProps> = ({ limit }) => {
   return (
     <div className="grid grid-cols-1 gap-2 md:grid-cols-2">
       {displayedProjects.map((project, index) => (
-        <div key={index} className="rounded-xl border border-gray-400 bg-black">
+        <div
+          key={index}
+          className="flex flex-col rounded-xl border border-gray-400 bg-black"
+        >
+          {" "}
+          {/* Flex Column */}
           <img
             src={project.image}
             alt={project.title}
             className="h-40 w-full rounded-xl object-cover"
           />
-          <div className="p-4">
+          <div className="flex flex-1 flex-col p-4">
+            {" "}
+            
+            {/* Inner flex container for growing */}
             <h3 className="text-center text-2xl font-bold text-white">
               {project.title}
             </h3>
             <p className="text-md mb-2 text-gray-300">{project.description}</p>
-
             <div className="mb-3 flex flex-wrap gap-2">
               {project.techStack.map((tech, i) => (
                 <span
@@ -39,8 +46,10 @@ const ProjectCards: React.FC<ProjectCardsProps> = ({ limit }) => {
                 </span>
               ))}
             </div>
+            <div className="mt-auto flex items-center gap-2">
+              {" "}
 
-            <div className="flex items-center gap-2">
+              {/* Pushed to bottom */}
               {project.github && (
                 <Link
                   to={project.github}
