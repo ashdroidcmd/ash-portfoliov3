@@ -27,7 +27,8 @@ const ProjectTable = () => {
   });
 
   const handleDelete = async (id: number) => {
-    if (!window.confirm("Are you sure you want to delete this project?")) return;
+    if (!window.confirm("Are you sure you want to delete this project?"))
+      return;
 
     setDeleteLoadingId(id);
     try {
@@ -72,12 +73,13 @@ const ProjectTable = () => {
   };
 
   if (loading) return <p className="text-gray-300">Loading...</p>;
-  if (error) return <p className="text-red-500">Failed to load project data.</p>;
+  if (error)
+    return <p className="text-red-500">Failed to load project data.</p>;
 
   return (
     <>
-      <div className="overflow-x-auto border-b border-gray-500 mb-4">
-        <table className="table w-full table-zebra">
+      <div className="mb-4 overflow-x-auto border-b border-gray-500">
+        <table className="table-zebra table w-full">
           <thead>
             <tr>
               <th>ID</th>
@@ -105,13 +107,23 @@ const ProjectTable = () => {
                 <td className="text-sm">{item.techStack.join(", ")}</td>
                 <td>
                   {item.github && (
-                    <a href={item.github} target="_blank" rel="noreferrer" className="link link-info">
+                    <a
+                      href={item.github}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="link link-info"
+                    >
                       GitHub
                     </a>
                   )}
                   <br />
                   {item.view && (
-                    <a href={item.view} target="_blank" rel="noreferrer" className="link link-success">
+                    <a
+                      href={item.view}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="link link-success"
+                    >
                       Live
                     </a>
                   )}
@@ -125,7 +137,7 @@ const ProjectTable = () => {
                     {deleteLoadingId === item.id ? "Deleting..." : "Delete"}
                   </button>
                   <button
-                    className="btn btn-sm btn-info btn-outline hover:bg-blue-600 hover:text-white ml-2"
+                    className="btn btn-sm btn-info btn-outline ml-2 hover:bg-blue-600 hover:text-white"
                     onClick={() => handleEdit(item)}
                   >
                     Edit
@@ -139,12 +151,12 @@ const ProjectTable = () => {
 
       {/* Edit Modal */}
       {isModalOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center">
+        <div className="bg-opacity-50 fixed inset-0 z-50 flex items-center justify-center bg-black">
           <form
             onSubmit={handleUpdateSubmit}
-            className="bg-black rounded-lg p-6 w-full max-w-lg space-y-4 border border-gray-500"
+            className="w-full max-w-lg space-y-4 rounded-lg border border-gray-500 bg-black p-6"
           >
-            <h2 className="text-xl text-white font-bold mb-2">Edit Project</h2>
+            <h2 className="mb-2 text-xl font-bold text-white">Edit Project</h2>
             <input
               type="text"
               placeholder="Title"
@@ -157,7 +169,9 @@ const ProjectTable = () => {
               placeholder="Description"
               className="textarea textarea-bordered w-full"
               value={form.description}
-              onChange={(e) => setForm({ ...form, description: e.target.value })}
+              onChange={(e) =>
+                setForm({ ...form, description: e.target.value })
+              }
               required
             />
             <input
@@ -191,7 +205,7 @@ const ProjectTable = () => {
               onChange={(e) => setForm({ ...form, view: e.target.value })}
             />
 
-            <div className="flex justify-end gap-2 mt-4">
+            <div className="mt-4 flex justify-end gap-2">
               <button
                 type="button"
                 className="btn btn-error btn-outline"

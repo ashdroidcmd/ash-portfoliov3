@@ -33,58 +33,61 @@ const CreateEducation = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className=" space-y-4 p-4 border rounded border-gray-500 mb-4">
-        <div className="flex flex-row items-center mb-4">
+    <form
+      onSubmit={handleSubmit}
+      className="mb-4 space-y-4 rounded border border-gray-500 p-4"
+    >
+      <div className="mb-4 flex flex-row items-center">
         <div className="flex-1 grow">
-      <h2 className="text-xl text-white">Add New Education</h2>
-      {error && <p className="text-red-500">{error}</p>}
+          <h2 className="text-xl text-white">Add New Education</h2>
+          {error && <p className="text-red-500">{error}</p>}
+        </div>
+        <div>
+          <button
+            type="submit"
+            className={`btn btn-outline hover:bg-white hover:text-black ${loading ? "loading" : ""}`}
+            disabled={loading}
+          >
+            {loading ? "Saving..." : "Add Education"}
+          </button>
+        </div>
       </div>
-      <div>
-<button
-        type="submit"
-        className={`btn btn-outline hover:bg-white hover:text-black ${loading ? "loading" : ""}`}
-        disabled={loading}
-      >
-        {loading ? "Saving..." : "Add Education"}
-      </button>
-      </div>
-      </div>
-<div className="flex flex-row gap-4">
-      <input
-        type="url"
-        placeholder="Image URL from Cloudinary"
-        value={image}
-        onChange={(e) => setImage(e.target.value)}
-        className="input input-bordered w-full"
-        required
-      />
+      <div className="flex flex-row gap-4">
+        <input
+          type="url"
+          placeholder="Image URL from Cloudinary"
+          value={image}
+          onChange={(e) => setImage(e.target.value)}
+          className="input input-bordered w-full"
+          required
+        />
 
-      <input
-        type="text"
-        placeholder="Course Name"
-        value={courseName}
-        onChange={(e) => setCourseName(e.target.value)}
-        className="input input-bordered w-full"
-        required
-      />
+        <input
+          type="text"
+          placeholder="Course Name"
+          value={courseName}
+          onChange={(e) => setCourseName(e.target.value)}
+          className="input input-bordered w-full"
+          required
+        />
 
-      <input
-        type="text"
-        placeholder="School"
-        value={school}
-        onChange={(e) => setSchool(e.target.value)}
-        className="input input-bordered w-full"
-        required
-      />
+        <input
+          type="text"
+          placeholder="School"
+          value={school}
+          onChange={(e) => setSchool(e.target.value)}
+          className="input input-bordered w-full"
+          required
+        />
 
-      <input
-        type="url"
-        placeholder="Certificate URL from Google Drive"
-        value={url}
-        onChange={(e) => setUrl(e.target.value)}
-        className="input input-bordered w-full"
-        required
-      />
+        <input
+          type="url"
+          placeholder="Certificate URL from Google Drive"
+          value={url}
+          onChange={(e) => setUrl(e.target.value)}
+          className="input input-bordered w-full"
+          required
+        />
       </div>
     </form>
   );

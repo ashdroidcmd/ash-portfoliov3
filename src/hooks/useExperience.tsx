@@ -13,11 +13,12 @@ export function useExperienceApi() {
   const [data, setData] = useState<Experience[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
+  const BASE_URL = import.meta.env.VITE_BACKEND_URL;
 
   const fetchExperience = () => {
     setLoading(true);
     axios
-      .get("http://localhost:5000/experiences")
+      .get(`${BASE_URL}/experiences`)
       .then((res) => {
         setData(res.data);
         setError(null);
@@ -33,7 +34,7 @@ export function useExperienceApi() {
   const deleteExperience = async (id: number) => {
     try {
       setLoading(true);
-      await axios.delete(`http://localhost:5000/experiences/${id}`);
+      await axios.delete(`${BASE_URL}/experiences/${id}`);
       setData((prev) => prev.filter((item) => item.id !== id));
       setError(null);
     } catch (err) {
@@ -46,7 +47,7 @@ export function useExperienceApi() {
   const createExperience = async (newExp: Omit<Experience, "id">) => {
     try {
       setLoading(true);
-      const res = await axios.post("http://localhost:5000/experiences", newExp);
+      const res = await axios.post(`${BASE_URL}/experiences`, newExp);
       setData((prev) => [...prev, res.data]);
       setError(null);
     } catch (err) {
@@ -59,7 +60,7 @@ export function useExperienceApi() {
   const updateExperience = async (id: number, updatedExp: Omit<Experience, "id">) => {
     try {
       setLoading(true);
-      const res = await axios.put(`http://localhost:5000/experiences/${id}`, updatedExp);
+      const res = await axios.put(`${BASE_URL}/experiences/${id}`, updatedExp);
       setData((prev) =>
         prev.map((item) => (item.id === id ? res.data : item))
       );

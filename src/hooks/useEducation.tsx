@@ -14,12 +14,13 @@ export function useEducationApi() {
   const [data, setData] = useState<Education[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
+  const BASE_URL = import.meta.env.VITE_BACKEND_URL;
 
   // Fetch all education data
   const getEducation = () => {
     setLoading(true);
     axios
-      .get("http://localhost:5000/education")
+      .get(`${BASE_URL}/education`)
       .then((res) => {
         setData(res.data);
         setError(null);
@@ -36,7 +37,7 @@ export function useEducationApi() {
   const createEducation = async (newEntry: Omit<Education, "id">) => {
     try {
       setLoading(true);
-      const res = await axios.post("http://localhost:5000/education", newEntry);
+      const res = await axios.post(`${BASE_URL}/education`, newEntry);
       setData((prev) => [...prev, res.data]);
       setError(null);
     } catch (err) {
@@ -50,8 +51,7 @@ export function useEducationApi() {
   const deleteEducation = async (id: string) => {
     try {
       setLoading(true);
-      await axios.delete(`http://localhost:5000/education/${id}`);
-      // Remove deleted entry from local state
+      await axios.delete(`${BASE_URL}/education/${id}`);
       setData((prev) => prev.filter((item) => item.id !== id));
       setError(null);
     } catch (err) {
@@ -63,7 +63,7 @@ export function useEducationApi() {
 
   const updateEducation = async (id: number, updatedData: any) => {
     try {
-      const res = await fetch(`http://localhost:5000/education/${id}`, {
+      const res = await fetch(`${BASE_URL}/education/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

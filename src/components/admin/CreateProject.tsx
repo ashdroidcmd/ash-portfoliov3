@@ -45,8 +45,11 @@ const CreateProject = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4 p-4 border rounded border-gray-500 mb-4">
-      <div className="flex flex-row items-center mb-4">
+    <form
+      onSubmit={handleSubmit}
+      className="mb-4 space-y-4 rounded border border-gray-500 p-4"
+    >
+      <div className="mb-4 flex flex-row items-center">
         <div className="flex-1 grow">
           <h2 className="text-xl text-white">Add New Project</h2>
           {error && <p className="text-red-500">{error}</p>}
@@ -62,7 +65,7 @@ const CreateProject = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
         <input
           type="text"
           placeholder="Project Title"
@@ -111,7 +114,7 @@ const CreateProject = () => {
         placeholder="Project Description"
         value={description}
         onChange={(e) => setDescription(e.target.value)}
-        className="textarea textarea-bordered w-full mt-4"
+        className="textarea textarea-bordered mt-4 w-full"
         rows={4}
         required
       />

@@ -11,11 +11,12 @@ export function useTechStackApi() {
   const [data, setData] = useState<TechStack[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
+  const BASE_URL = import.meta.env.VITE_BACKEND_URL;
 
   const fetchTechStacks = () => {
     setLoading(true);
     axios
-      .get("http://localhost:5000/techstack")
+      .get(`${BASE_URL}/techstack`)
       .then((res) => {
         setData(res.data);
         setError(null);
@@ -31,7 +32,7 @@ export function useTechStackApi() {
   const deleteTechStack = async (id: number) => {
     try {
       setLoading(true);
-      await axios.delete(`http://localhost:5000/techstack/${id}`);
+      await axios.delete(`${BASE_URL}/techstack/${id}`);
       setData((prev) => prev.filter((item) => item.id !== id));
       setError(null);
     } catch (err) {
@@ -44,7 +45,7 @@ export function useTechStackApi() {
   const createTechStack = async (newTech: Omit<TechStack, "id">) => {
     try {
       setLoading(true);
-      const res = await axios.post("http://localhost:5000/techstack", newTech);
+      const res = await axios.post(`${BASE_URL}/techstack`, newTech);
       setData((prev) => [...prev, res.data]);
       setError(null);
     } catch (err) {
@@ -57,7 +58,7 @@ export function useTechStackApi() {
   const updateTechStack = async (id: number, updatedTech: Omit<TechStack, "id">) => {
     try {
       setLoading(true);
-      const res = await axios.put(`http://localhost:5000/techstack/${id}`, updatedTech);
+      const res = await axios.put(`${BASE_URL}/techstack/${id}`, updatedTech);
       setData((prev) =>
         prev.map((item) => (item.id === id ? res.data : item))
       );

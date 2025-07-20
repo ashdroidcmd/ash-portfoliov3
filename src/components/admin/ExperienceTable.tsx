@@ -25,7 +25,8 @@ const ExperienceTable = () => {
   });
 
   const handleDelete = async (id: number) => {
-    if (!window.confirm("Are you sure you want to delete this experience?")) return;
+    if (!window.confirm("Are you sure you want to delete this experience?"))
+      return;
 
     setDeleteLoadingId(id);
     try {
@@ -65,12 +66,13 @@ const ExperienceTable = () => {
   };
 
   if (loading) return <p className="text-gray-300">Loading...</p>;
-  if (error) return <p className="text-red-500">Failed to load experience data.</p>;
+  if (error)
+    return <p className="text-red-500">Failed to load experience data.</p>;
 
   return (
     <>
-      <div className="overflow-x-auto border-b border-b-gray-500 mb-4">
-        <table className="table w-full table-zebra">
+      <div className="mb-4 overflow-x-auto border-b border-b-gray-500">
+        <table className="table-zebra table w-full">
           <thead>
             <tr>
               <th>ID</th>
@@ -89,7 +91,7 @@ const ExperienceTable = () => {
                   <img
                     src={item.image}
                     alt={item.companyName}
-                    className="h-16 w-16 rounded-full object-contain border bg-white"
+                    className="h-16 w-16 rounded-full border bg-white object-contain"
                   />
                 </td>
                 <td className="font-semibold">{item.companyName}</td>
@@ -104,7 +106,7 @@ const ExperienceTable = () => {
                     {deleteLoadingId === item.id ? "Deleting..." : "Delete"}
                   </button>
                   <button
-                    className="btn btn-sm btn-info btn-outline hover:bg-blue-600 hover:text-white ml-2"
+                    className="btn btn-sm btn-info btn-outline ml-2 hover:bg-blue-600 hover:text-white"
                     onClick={() => handleEdit(item)}
                   >
                     Edit
@@ -118,18 +120,22 @@ const ExperienceTable = () => {
 
       {/* Edit Modal */}
       {isModalOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center">
+        <div className="bg-opacity-50 fixed inset-0 z-50 flex items-center justify-center bg-black">
           <form
             onSubmit={handleUpdateSubmit}
-            className="bg-black rounded-lg p-6 w-full max-w-lg space-y-4 border border-gray-500"
+            className="w-full max-w-lg space-y-4 rounded-lg border border-gray-500 bg-black p-6"
           >
-            <h2 className="text-xl text-white font-bold mb-2">Edit Experience</h2>
+            <h2 className="mb-2 text-xl font-bold text-white">
+              Edit Experience
+            </h2>
             <input
               type="text"
               placeholder="Company Name"
               className="input input-bordered w-full"
               value={form.companyName}
-              onChange={(e) => setForm({ ...form, companyName: e.target.value })}
+              onChange={(e) =>
+                setForm({ ...form, companyName: e.target.value })
+              }
               required
             />
             <input
@@ -157,7 +163,7 @@ const ExperienceTable = () => {
               required
             />
 
-            <div className="flex justify-end gap-2 mt-4">
+            <div className="mt-4 flex justify-end gap-2">
               <button
                 type="button"
                 className="btn btn-error btn-outline"

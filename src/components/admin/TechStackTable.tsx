@@ -17,7 +17,10 @@ const TechStackTable = () => {
     deleteTechStack,
   } = useTechStackApi();
 
-  const [form, setForm] = useState<Omit<TechStack, "id">>({ name: "", image: "" });
+  const [form, setForm] = useState<Omit<TechStack, "id">>({
+    name: "",
+    image: "",
+  });
   const [editId, setEditId] = useState<number | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [actionLoading, setActionLoading] = useState(false);
@@ -74,12 +77,17 @@ const TechStackTable = () => {
   };
 
   if (loading) return <p className="text-gray-400">Loading...</p>;
-  if (error) return <p className="text-red-500">{typeof error === "string" ? error : error.message || String(error)}</p>;
+  if (error)
+    return (
+      <p className="text-red-500">
+        {typeof error === "string" ? error : error.message || String(error)}
+      </p>
+    );
 
   return (
     <>
       <div className="overflow-x-auto">
-        <table className="table w-full table-zebra">
+        <table className="table-zebra table w-full">
           <thead>
             <tr>
               <th>ID</th>
@@ -96,7 +104,7 @@ const TechStackTable = () => {
                   <img
                     src={item.image}
                     alt={item.name}
-                    className="w-12 h-12 object-contain"
+                    className="h-12 w-12 object-contain"
                   />
                 </td>
                 <td>{item.name}</td>
@@ -121,10 +129,10 @@ const TechStackTable = () => {
       </div>
 
       {isModalOpen && (
-        <div className="fixed inset-0 z-50 bg-black bg-opacity-50 flex justify-center items-center">
+        <div className="bg-opacity-50 fixed inset-0 z-50 flex items-center justify-center bg-black">
           <form
             onSubmit={handleSubmit}
-            className="bg-black p-6 border border-gray-600 rounded-lg w-full max-w-md space-y-4"
+            className="w-full max-w-md space-y-4 rounded-lg border border-gray-600 bg-black p-6"
           >
             <h2 className="text-xl font-bold text-white">
               {editId !== null ? "Edit Tech Stack" : "Add Tech Stack"}

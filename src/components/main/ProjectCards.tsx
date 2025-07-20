@@ -1,38 +1,19 @@
-import { useState, useEffect } from "react";
+import { useProjectApi } from "../../hooks/useProject";
 import { Link } from "react-router-dom";
-import axios from "axios";
-
-type Project = {
-  title: string;
-  description: string;
-  image: string;
-  techStack: string[];
-  github: string;
-  view: string;
-};
 
 const ProjectCards = () => {
-  const [projects, setProjects] = useState<Project[]>([]);
-  const [loading, setLoading] = useState(true);
+  const {
+    data: projectData,
+    loading,
+    error,
+  } = useProjectApi();
 
-  useEffect(() => {
-    axios
-      .get("http://localhost:5000/projects")
-      .then((res) => {
-        setProjects(res.data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.error("❌ Failed to fetch Project Data:", err);
-        setLoading(false);
-      });
-  }, []);
-
+  if (error) return <p className="text-red-500">Error loading projects</p>;
   if (loading) return <p className="text-gray-400">Loading...</p>;
 
   return (
     <div className="grid grid-cols-1 gap-2 md:grid-cols-2">
-      {projects.slice(0, 4).map((project, index) => (
+      {projectData.slice(0, 4).map((project, index) => (
         <div key={index} className="rounded-xl border border-gray-400 bg-black">
           <img
             src={project.image}

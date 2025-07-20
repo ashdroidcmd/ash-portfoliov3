@@ -1,7 +1,7 @@
-import { useState } from 'react';
-import { Outlet } from 'react-router-dom';
-import Sidebar from '../components/admin/Sidebar';
-import { Menu } from 'lucide-react';
+import { useState } from "react";
+import { Outlet } from "react-router-dom";
+import Sidebar from "../components/admin/Sidebar";
+import { Menu } from "lucide-react";
 
 const AdminLayout = () => {
   const [collapsed, setCollapsed] = useState(false);
@@ -17,7 +17,7 @@ const AdminLayout = () => {
           className="drawer-overlay lg:hidden"
         ></label>
         <div
-          className={`min-h-screen border-e border-e-gray-700 bg-zinc-900 transition-all duration-300 ${collapsed ? 'w-20' : 'w-80'}`}
+          className={`min-h-screen border-e border-e-gray-700 bg-zinc-900 transition-all duration-300 ${collapsed ? "w-20" : "w-80"}`}
         >
           {/* Collapse Button */}
           <div className="border-b border-b-gray-700 py-4 pl-2">
@@ -35,7 +35,7 @@ const AdminLayout = () => {
       {/* Main Content */}
       <div className={`drawer-content bg-black text-white`}>
         <div className="p-4">
-        <Outlet />
+          <Outlet />
         </div>
       </div>
     </div>

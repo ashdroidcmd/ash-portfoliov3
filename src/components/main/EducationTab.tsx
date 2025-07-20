@@ -1,31 +1,10 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
 import { Link } from "react-router-dom";
-
-type Education = {
-  courseName: string;
-  school: string;
-  image: string;
-  url: string;
-};
+import { useEducationApi } from "../../hooks/useEducation";
 
 const EducationTab = () => {
-  const [educationData, setEducationData] = useState<Education[]>([]);
-  const [loading, setLoading] = useState(true);
+  const { data: educationData, loading, error } = useEducationApi();
 
-  useEffect(() => {
-    axios
-      .get("http://localhost:5000/education")
-      .then((res) => {
-        setEducationData(res.data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.error("❌ Failed to fetch Education data:", err);
-        setLoading(false);
-      });
-  }, []);
-
+  if (error) return <p className="text-red-500">Error loading education</p>;
   if (loading) return <p className="text-gray-300">Loading...</p>;
 
   return (

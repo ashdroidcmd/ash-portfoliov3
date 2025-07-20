@@ -32,8 +32,11 @@ const CreateExperience = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4 p-4 border rounded border-gray-500 mb-4">
-      <div className="flex flex-row items-center mb-4">
+    <form
+      onSubmit={handleSubmit}
+      className="mb-4 space-y-4 rounded border border-gray-500 p-4"
+    >
+      <div className="mb-4 flex flex-row items-center">
         <div className="flex-1 grow">
           <h2 className="text-xl text-white">Add New Experience</h2>
           {error && <p className="text-red-500">{error}</p>}

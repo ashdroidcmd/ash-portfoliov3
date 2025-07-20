@@ -1,30 +1,9 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
-
-type Experience = {
-  date: string;
-  jobTitle: string;
-  companyName: string;
-  image: string;
-};
+import { useExperienceApi } from "../../hooks/useExperience";
 
 const ExperienceTab = () => {
-  const [experienceData, setExperienceData] = useState<Experience[]>([]);
-  const [loading, setLoading] = useState(true);
+  const { data: experienceData, loading, error } = useExperienceApi();
 
-  useEffect(() => {
-    axios
-      .get("http://localhost:5000/experiences")
-      .then((res) => {
-        setExperienceData(res.data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.error("❌ Failed to fetch Experiences data:", err);
-        setLoading(false);
-      });
-  }, []);
-
+  if (error) return <p className="text-red-500">Error loading experience</p>;
   if (loading) return <p className="text-gray-300">Loading...</p>;
 
   return (

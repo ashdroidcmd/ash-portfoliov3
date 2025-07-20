@@ -16,11 +16,12 @@ export function useProjectApi() {
   const [data, setData] = useState<Project[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
+  const BASE_URL = import.meta.env.VITE_BACKEND_URL;
 
   const fetchProjects = () => {
     setLoading(true);
     axios
-      .get("http://localhost:5000/projects")
+      .get(`${BASE_URL}/projects`)
       .then((res) => {
         setData(res.data);
         setError(null);
@@ -36,7 +37,7 @@ export function useProjectApi() {
   const deleteProject = async (id: number) => {
     try {
       setLoading(true);
-      await axios.delete(`http://localhost:5000/projects/${id}`);
+      await axios.delete(`${BASE_URL}/projects/${id}`);
       setData((prev) => prev.filter((item) => item.id !== id));
       setError(null);
     } catch (err) {
@@ -49,7 +50,7 @@ export function useProjectApi() {
   const createProject = async (newProj: Omit<Project, "id" | "createdAt">) => {
     try {
       setLoading(true);
-      const res = await axios.post("http://localhost:5000/projects", newProj);
+      const res = await axios.post(`${BASE_URL}/projects`, newProj);
       setData((prev) => [...prev, res.data]);
       setError(null);
     } catch (err) {
@@ -61,14 +62,12 @@ export function useProjectApi() {
 
   const updateProject = async (
     id: number,
-    updatedProj: Omit<Project, "id" | "createdAt">
+    updatedProj: Omit<Project, "id" | "createdAt">,
   ) => {
     try {
       setLoading(true);
-      const res = await axios.put(`http://localhost:5000/projects/${id}`, updatedProj);
-      setData((prev) =>
-        prev.map((item) => (item.id === id ? res.data : item))
-      );
+      const res = await axios.put(`${BASE_URL}/projects/${id}`, updatedProj);
+      setData((prev) => prev.map((item) => (item.id === id ? res.data : item)));
       setError(null);
     } catch (err) {
       setError(err as Error);
