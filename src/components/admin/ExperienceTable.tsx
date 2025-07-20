@@ -2,7 +2,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState } from "react";
 import { useExperienceApi } from "../../hooks/useExperience";
-import axios from "axios";
 
 const ExperienceTable = () => {
   const {
@@ -10,7 +9,7 @@ const ExperienceTable = () => {
     loading,
     error,
     deleteExperience,
-    refetch,
+    updateExperience,
   } = useExperienceApi();
 
   const [deleteLoadingId, setDeleteLoadingId] = useState<number | null>(null);
@@ -55,8 +54,7 @@ const ExperienceTable = () => {
 
     setEditLoading(true);
     try {
-      await axios.put(`http://localhost:5000/experiences/${editItem.id}`, form);
-      await refetch();
+      await updateExperience(editItem.id, form);
       setIsModalOpen(false);
     } catch (error) {
       alert("Update failed");

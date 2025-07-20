@@ -1,19 +1,22 @@
 import { useProjectApi } from "../../hooks/useProject";
 import { Link } from "react-router-dom";
 
-const ProjectCards = () => {
-  const {
-    data: projectData,
-    loading,
-    error,
-  } = useProjectApi();
+interface ProjectCardsProps {
+  limit?: number;
+}
+
+const ProjectCards: React.FC<ProjectCardsProps> = ({ limit }) => {
+  const { data: projectData, loading, error } = useProjectApi();
 
   if (error) return <p className="text-red-500">Error loading projects</p>;
   if (loading) return <p className="text-gray-400">Loading...</p>;
+  if (!projectData) return null;
+
+  const displayedProjects = limit ? projectData.slice(0, limit) : projectData;
 
   return (
     <div className="grid grid-cols-1 gap-2 md:grid-cols-2">
-      {projectData.slice(0, 4).map((project, index) => (
+      {displayedProjects.map((project, index) => (
         <div key={index} className="rounded-xl border border-gray-400 bg-black">
           <img
             src={project.image}

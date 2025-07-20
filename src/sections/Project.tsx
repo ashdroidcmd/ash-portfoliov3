@@ -16,7 +16,7 @@ const Project = () => {
       </div>
 
       {/* Cards */}
-      <ProjectCards />
+      <ProjectCards limit={4} />
     </section>
   );
 };

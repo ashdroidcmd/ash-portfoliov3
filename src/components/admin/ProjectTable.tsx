@@ -2,7 +2,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState } from "react";
 import { useProjectApi } from "../../hooks/useProject";
-import axios from "axios";
 
 const ProjectTable = () => {
   const {
@@ -10,7 +9,7 @@ const ProjectTable = () => {
     loading,
     error,
     deleteProject,
-    refetch,
+    updateProject,
   } = useProjectApi();
 
   const [deleteLoadingId, setDeleteLoadingId] = useState<number | null>(null);
@@ -59,11 +58,10 @@ const ProjectTable = () => {
 
     setEditLoading(true);
     try {
-      await axios.put(`http://localhost:5000/projects/${editItem.id}`, {
+      await updateProject(editItem.id, {
         ...form,
         techStack: form.techStack.split(",").map((tech) => tech.trim()),
       });
-      await refetch();
       setIsModalOpen(false);
     } catch (error) {
       alert("Update failed");

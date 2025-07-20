@@ -48,19 +48,19 @@ const EducationTable = () => {
   };
 
   const handleUpdateSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!editItem) return;
+  e.preventDefault();
+  if (!editItem) return;
 
-    setEditLoading(true);
-    try {
-      await updateEducation(editItem.id, form);
-      setIsModalOpen(false);
-    } catch (error) {
-      alert("Update failed");
-    } finally {
-      setEditLoading(false);
-    }
-  };
+  setEditLoading(true);
+  try {
+    await updateEducation(editItem.id, form);
+    setIsModalOpen(false);
+  } catch (error) {
+    alert("Update failed");
+  } finally {
+    setEditLoading(false);
+  }
+};
 
   if (loading) return <p className="text-gray-300">Loading...</p>;
   if (error)
