@@ -27,7 +27,7 @@ function App() {
           </Route>
 
           {/* Dashboard routes wrapped in AdminLayout */}
-          <Route path="/123456" element={<AdminLayout />}>
+          <Route path="/vzZUnTamu3" element={<AdminLayout />}>
             <Route index element={<Dashboard />} />
             <Route path="qualifications" element={<QualificationsPage />} />
             <Route path="tech-stack" element={<TechStackPage />} />

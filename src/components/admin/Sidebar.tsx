@@ -13,7 +13,7 @@ const Sidebar: React.FC<SidebarProps> = ({ collapsed }) => {
       }`}
     >
       <li>
-        <Link title="Home" to="/">
+        <Link title="Home" to="/vzZUnTamu3">
           {collapsed ? (
             <House size={26}/>
           ) : (
