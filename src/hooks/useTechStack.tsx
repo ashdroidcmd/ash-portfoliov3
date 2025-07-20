@@ -18,7 +18,10 @@ export function useTechStackApi() {
     axios
       .get(`${BASE_URL}/techstack`)
       .then((res) => {
-        setData(res.data);
+        const sortedData = res.data.sort(
+          (a: { id: number }, b: { id: number }) => a.id - b.id,
+        );
+        setData(sortedData);
         setError(null);
       })
       .catch((err) => setError(err))
@@ -55,13 +58,14 @@ export function useTechStackApi() {
     }
   };
 
-  const updateTechStack = async (id: number, updatedTech: Omit<TechStack, "id">) => {
+  const updateTechStack = async (
+    id: number,
+    updatedTech: Omit<TechStack, "id">,
+  ) => {
     try {
       setLoading(true);
       const res = await axios.put(`${BASE_URL}/techstack/${id}`, updatedTech);
-      setData((prev) =>
-        prev.map((item) => (item.id === id ? res.data : item))
-      );
+      setData((prev) => prev.map((item) => (item.id === id ? res.data : item)));
       setError(null);
     } catch (err) {
       setError(err as Error);
