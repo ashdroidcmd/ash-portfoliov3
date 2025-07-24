@@ -26,7 +26,7 @@ const ProjectPage = () => {
       </div>
 
       <div className="mb-6">
-        <ProjectCards />
+        <ProjectCards limit={0} />
       </div>
     </section>
   );

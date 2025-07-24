@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from "react";
 import axios from "axios";
 
@@ -5,9 +6,10 @@ export type TechStack = {
   id: number;
   name: string;
   image: string;
+  category?: string;
 };
 
-export function useTechStackApi() {
+export function useTechStackApi(category: string = "") {
   const [data, setData] = useState<TechStack[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
@@ -15,8 +17,9 @@ export function useTechStackApi() {
 
   const fetchTechStacks = () => {
     setLoading(true);
+    const query = category ? `?category=${encodeURIComponent(category)}` : "";
     axios
-      .get(`${BASE_URL}/techstack`)
+      .get(`${BASE_URL}/techstack${query}`)
       .then((res) => {
         const sortedData = res.data.sort(
           (a: { id: number }, b: { id: number }) => a.id - b.id,
@@ -30,7 +33,7 @@ export function useTechStackApi() {
 
   useEffect(() => {
     fetchTechStacks();
-  }, []);
+  }, [category]);
 
   const deleteTechStack = async (id: number) => {
     try {

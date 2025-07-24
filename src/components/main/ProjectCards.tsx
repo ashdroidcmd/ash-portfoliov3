@@ -5,6 +5,7 @@ import Pagination from "./Pagination";
 
 interface ProjectCardsProps {
   perPage?: number;
+  limit: number;
 }
 
 const ProjectCards: React.FC<ProjectCardsProps> = ({ perPage = 4 }) => {
