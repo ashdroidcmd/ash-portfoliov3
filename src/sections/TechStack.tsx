@@ -14,7 +14,7 @@ const TechStack = () => {
   return (
     <section className="mb-6">
       <div className="flex flex-row items-center">
-        <p className="mb-4 text-3xl font-semibold text-white grow">Tech Stack</p>
+        <p className="mb-4 text-2xl md:text-3xl font-semibold text-white grow">Tech Stack</p>
 
         {/* Dropdown UI */}
         <div className="mb-4">
