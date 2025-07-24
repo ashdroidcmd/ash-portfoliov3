@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail, FileUser } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Hero = () => {
@@ -16,33 +16,36 @@ const Hero = () => {
           <Link
             to="https://github.com/ashdroidcmd"
             target="_blank"
-            className="cursor-pointer transition duration-150 hover:scale-125"
+            className="tooltip-bottom tooltip cursor-pointer transition duration-150 hover:scale-125"
+            data-tip="Github"
           >
             <Github size={36} />
           </Link>
           <Link
             to="https://www.linkedin.com/in/ash-gesite-25a28334b/"
             target="_blank"
-            className="cursor-pointer transition duration-150 hover:scale-125"
+            className="tooltip-bottom tooltip cursor-pointer transition duration-150 hover:scale-125"
+            data-tip="Linkedin"
           >
             <Linkedin size={36} />
           </Link>
           <Link
-            to="#"
+            to="mailto:z.wolff25@gmail.com"
             target="_blank"
-            className="cursor-pointer transition duration-150 hover:scale-125"
+            rel="noopener noreferrer"
+            className="tooltip-bottom tooltip cursor-pointer transition duration-150 hover:scale-125"
+            data-tip="Gmail"
           >
             <Mail size={36} />
           </Link>
-        </div>
-
-        <div className="flex justify-center gap-2 md:justify-start">
-          <button className="btn btn-outline btn-md rounded-2xl hover:bg-white hover:text-black">
-            Resume
-          </button>
-          <button className="btn btn-outline btn-md rounded-2xl hover:bg-white hover:text-black">
-            Contact Me
-          </button>
+          <Link
+            to="/"
+            target="_blank"
+            className="tooltip-bottom tooltip cursor-pointer transition duration-150 hover:scale-125"
+            data-tip="CV"
+          >
+            <FileUser size={36} />
+          </Link>
         </div>
       </div>
 

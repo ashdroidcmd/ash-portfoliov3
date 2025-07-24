@@ -24,8 +24,9 @@ const Footer = () => {
             <Linkedin size={30} />
           </Link>
           <Link
-            to="#"
+            to="mailto:z.wolff25@gmail.com"
             target="_blank"
+            rel="noopener noreferrer"
             className="cursor-pointer transition duration-150 hover:scale-125"
           >
             <Mail size={30} />
