@@ -1,19 +1,19 @@
 import { useState } from "react";
 import { useProjectApi } from "../../hooks/useProject";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Pagination from "./Pagination";
 
 interface ProjectCardsProps {
   perPage?: number;
-  limit: number;
+  category?: string;
 }
 
-const ProjectCards: React.FC<ProjectCardsProps> = ({ perPage = 4 }) => {
-  const { data: projectData, loading, error } = useProjectApi();
+const ProjectCards: React.FC<ProjectCardsProps> = ({
+  perPage = 4,
+  category,
+}) => {
+  const { data: projectData, loading, error } = useProjectApi(category);
   const [currentPage, setCurrentPage] = useState(1);
-  const location = useLocation();
-
-  const isHomePage = location.pathname === "/";
 
   if (error) return <p className="text-red-500">Error loading projects</p>;
   if (loading) return <p className="text-gray-400">Loading...</p>;
@@ -84,14 +84,11 @@ const ProjectCards: React.FC<ProjectCardsProps> = ({ perPage = 4 }) => {
         ))}
       </div>
 
-      {/* 👇 Pagination hidden on homepage */}
-      {!isHomePage && (
-        <Pagination
-          currentPage={currentPage}
-          totalPages={totalPages}
-          onPageChange={(page) => setCurrentPage(page)}
-        />
-      )}
+      <Pagination
+        currentPage={currentPage}
+        totalPages={totalPages}
+        onPageChange={(page) => setCurrentPage(page)}
+      />
     </>
   );
 };

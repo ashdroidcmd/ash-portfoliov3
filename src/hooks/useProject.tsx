@@ -10,9 +10,10 @@ type Project = {
   github?: string;
   view?: string;
   createdAt: string;
+  category?: string;
 };
 
-export function useProjectApi() {
+export function useProjectApi(category: string | undefined) {
   const [data, setData] = useState<Project[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
@@ -20,8 +21,9 @@ export function useProjectApi() {
 
   const fetchProjects = () => {
     setLoading(true);
+    const query = category ? `?category=${encodeURIComponent(category)}` : "";
     axios
-      .get(`${BASE_URL}/projects`)
+      .get(`${BASE_URL}/projects${query}`)
       .then((res) => {
         setData(res.data);
         setError(null);
@@ -32,7 +34,7 @@ export function useProjectApi() {
 
   useEffect(() => {
     fetchProjects();
-  }, []);
+  }, [category]);
 
   const deleteProject = async (id: number) => {
     try {
@@ -75,14 +77,15 @@ export function useProjectApi() {
       setLoading(false);
     }
   };
-
   return {
     data,
     loading,
     error,
+    category,
     deleteProject,
     createProject,
     updateProject,
     refetch: fetchProjects,
   };
 }
+

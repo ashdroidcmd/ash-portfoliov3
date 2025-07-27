@@ -5,7 +5,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import MainLayout from "./layout/MainLayout";
 import ScrollToTop from "./utils/ScrollToTop";
 import HomePage from "./pages/main/HomePage";
-import MainProjectPage from "./pages/main/ProjectPage";
 
 // Admin
 import AdminLayout from "./layout/AdminLayout";
@@ -23,7 +22,6 @@ function App() {
           {/* Public routes wrapped in MainLayout */}
           <Route path="/" element={<MainLayout />}>
             <Route index element={<HomePage />} />
-            <Route path="projects" element={<MainProjectPage />} />
           </Route>
 
           {/* Dashboard routes wrapped in AdminLayout */}
