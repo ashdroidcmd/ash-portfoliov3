@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ProjectCards from "../components/main/ProjectCards";
+import ProjectCards from "../components/ProjectCards";
 
 const categories = ["All", "Web Development", "IoT"];
 

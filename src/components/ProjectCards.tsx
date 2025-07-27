@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useProjectApi } from "../../hooks/useProject";
+import { useProjectApi } from "../hooks/useProject";
 import { Link } from "react-router-dom";
 import Pagination from "./Pagination";
 

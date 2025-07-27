@@ -1,5 +1,5 @@
-import EducationTab from "../components/main/EducationTab";
-import ExperienceTab from "../components/main/ExperienceTab";
+import EducationTab from "../components/EducationTab";
+import ExperienceTab from "../components/ExperienceTab";
 
 const Qualifications = () => {
   return (

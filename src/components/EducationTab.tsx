@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useEducationApi } from "../../hooks/useEducation";
+import { useEducationApi } from "../hooks/useEducation";
 
 const EducationTab = () => {
   const { data: educationData, loading, error } = useEducationApi();

@@ -1,4 +1,4 @@
-import { useExperienceApi } from "../../hooks/useExperience";
+import { useExperienceApi } from "../hooks/useExperience";
 
 const ExperienceTab = () => {
   const { data: experienceData, loading, error } = useExperienceApi();
