@@ -11,7 +11,7 @@ import AdminLayout from "./layout/AdminLayout";
 import Dashboard from "./pages/admin/Dashboard";
 import QualificationsPage from "./pages/admin/QualificationsPage";
 import TechStackPage from "./pages/admin/TechStackPage";
-import AdminProjectPage from "./pages/admin/ProjectPage";
+// import AdminProjectPage from "./pages/admin/ProjectPage";
 
 function App() {
   return (
@@ -29,7 +29,7 @@ function App() {
             <Route index element={<Dashboard />} />
             <Route path="qualifications" element={<QualificationsPage />} />
             <Route path="tech-stack" element={<TechStackPage />} />
-            <Route path="projects" element={<AdminProjectPage />} />
+            {/* <Route path="projects" element={<AdminProjectPage />} /> */}
           </Route>
         </Routes>
       </BrowserRouter>
