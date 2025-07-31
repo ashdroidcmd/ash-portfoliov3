@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useProjectApi } from "../hooks/useProject";
 import { Link } from "react-router-dom";
 import Pagination from "./Pagination";
@@ -6,14 +5,17 @@ import Pagination from "./Pagination";
 interface ProjectCardsProps {
   perPage?: number;
   category?: string;
+  currentPage: number;
+  setCurrentPage: (page: number) => void;
 }
 
 const ProjectCards: React.FC<ProjectCardsProps> = ({
   perPage = 4,
   category,
+  currentPage,
+  setCurrentPage,
 }) => {
   const { data: projectData, loading, error } = useProjectApi(category);
-  const [currentPage, setCurrentPage] = useState(1);
 
   if (error) return <p className="text-red-500">Error loading projects</p>;
   if (loading) return <p className="text-gray-400">Loading...</p>;
@@ -87,7 +89,7 @@ const ProjectCards: React.FC<ProjectCardsProps> = ({
       <Pagination
         currentPage={currentPage}
         totalPages={totalPages}
-        onPageChange={(page) => setCurrentPage(page)}
+        onPageChange={setCurrentPage}
       />
     </>
   );
