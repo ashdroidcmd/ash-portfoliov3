@@ -1,4 +1,5 @@
 import { useProjectApi } from "../hooks/useProject";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import Pagination from "./Pagination";
 
@@ -16,6 +17,7 @@ const ProjectCards: React.FC<ProjectCardsProps> = ({
   setCurrentPage,
 }) => {
   const { data: projectData, loading, error } = useProjectApi(category);
+  const [modalImage, setModalImage] = useState<string | null>(null);
 
   if (error) return <p className="text-red-500">Error loading projects</p>;
   if (loading) return <p className="text-gray-400">Loading...</p>;
@@ -29,6 +31,7 @@ const ProjectCards: React.FC<ProjectCardsProps> = ({
 
   return (
     <>
+      {/* Project Cards */}
       <div className="grid grid-cols-1 gap-2 md:grid-cols-2">
         {paginatedProjects.map((project, index) => (
           <div
@@ -38,7 +41,8 @@ const ProjectCards: React.FC<ProjectCardsProps> = ({
             <img
               src={project.image}
               alt={project.title}
-              className="h-40 w-full rounded-xl object-cover"
+              className="h-40 w-full cursor-pointer rounded-xl object-cover"
+              onClick={() => setModalImage(project.image)}
             />
             <div className="flex flex-1 flex-col p-4">
               <h3 className="text-center text-2xl font-bold text-white">
@@ -86,6 +90,27 @@ const ProjectCards: React.FC<ProjectCardsProps> = ({
         ))}
       </div>
 
+      {/* Image Modals */}
+      {modalImage && (
+        <dialog
+          id="projectModal"
+          className="modal modal-open"
+          onClick={() => setModalImage(null)}
+        >
+          <div
+            className="modal-box max-w-7xl rounded-2xl border border-gray-400 p-0"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              src={modalImage}
+              alt="Project"
+              className="w-full rounded-2xl"
+            />
+          </div>
+        </dialog>
+      )}
+
+      {/* Pagination */}
       <Pagination
         currentPage={currentPage}
         totalPages={totalPages}
