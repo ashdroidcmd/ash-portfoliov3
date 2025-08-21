@@ -39,7 +39,7 @@ const Hero = () => {
             <Mail size={36} />
           </Link>
           <Link
-            to="/"
+            to="https://drive.google.com/file/d/1aD4tjpBAK6ghkgvz51CUDnt1xd83pfb1/view?usp=sharing"
             target="_blank"
             className="tooltip-bottom tooltip cursor-pointer transition duration-150 hover:scale-125"
             data-tip="CV"
@@ -52,7 +52,7 @@ const Hero = () => {
       {/* Centered Image Content */}
       <div className="flex flex-1 items-center justify-center">
         <img
-          src="./profile.jpg"
+          src="./profile2.jpg"
           alt="Profile"
           className="w-60 rounded-full border border-gray-500"
         />
