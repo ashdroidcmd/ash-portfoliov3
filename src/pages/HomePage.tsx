@@ -4,11 +4,11 @@ import Project from "../sections/Project";
 
 const HomePage = () => {
   return (
-    <section>
+    <>
       <Qualifications />
       <TechStack />
       <Project />
-    </section>
+    </>
   );
 };
 

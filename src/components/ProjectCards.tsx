@@ -1,7 +1,8 @@
-import { useProjectApi } from "../hooks/useProject";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import Pagination from "./Pagination";
+import projects from "../data/projects.json";
+import Carousel from "./Carousel";
 
 interface ProjectCardsProps {
   perPage?: number;
@@ -16,12 +17,17 @@ const ProjectCards: React.FC<ProjectCardsProps> = ({
   currentPage,
   setCurrentPage,
 }) => {
-  const { data: projectData, loading, error } = useProjectApi(category);
-  const [modalImage, setModalImage] = useState<string | null>(null);
+  const [carouselImages, setCarouselImages] = useState<string[] | null>(null);
 
-  if (error) return <p className="text-red-500">Error loading projects</p>;
-  if (loading) return <p className="text-gray-400">Loading...</p>;
-  if (!projectData) return null;
+  // Filter by category if provided
+  let projectData = category
+    ? projects.filter((p) => p.category === category)
+    : projects;
+
+  // ✅ Sort date ascending
+  projectData = [...projectData].sort(
+    (b, a) => new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime(),
+  );
 
   const totalProjects = projectData.length;
   const totalPages = Math.ceil(totalProjects / perPage);
@@ -39,10 +45,10 @@ const ProjectCards: React.FC<ProjectCardsProps> = ({
             className="flex flex-col rounded-xl border border-gray-400 bg-black"
           >
             <img
-              src={project.image}
+              src={project.imagesUrl[0]}
               alt={project.title}
               className="h-40 w-full cursor-pointer rounded-xl object-cover"
-              onClick={() => setModalImage(project.image)}
+              onClick={() => setCarouselImages(project.imagesUrl)}
             />
             <div className="flex flex-1 flex-col p-4">
               <h3 className="text-center text-2xl font-bold text-white">
@@ -62,9 +68,9 @@ const ProjectCards: React.FC<ProjectCardsProps> = ({
                 ))}
               </div>
               <div className="mt-auto flex items-center gap-2">
-                {project.github && (
+                {project.githubUrl && (
                   <Link
-                    to={project.github}
+                    to={project.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -73,9 +79,9 @@ const ProjectCards: React.FC<ProjectCardsProps> = ({
                     </button>
                   </Link>
                 )}
-                {project.view && (
+                {project.liveUrl && (
                   <Link
-                    to={project.view}
+                    to={project.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -90,24 +96,12 @@ const ProjectCards: React.FC<ProjectCardsProps> = ({
         ))}
       </div>
 
-      {/* Image Modals */}
-      {modalImage && (
-        <dialog
-          id="projectModal"
-          className="modal modal-open"
-          onClick={() => setModalImage(null)}
-        >
-          <div
-            className="modal-box max-w-7xl rounded-2xl border border-gray-400 p-0"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <img
-              src={modalImage}
-              alt="Project"
-              className="w-full rounded-2xl"
-            />
-          </div>
-        </dialog>
+      {/* DaisyUI Carousel Modal */}
+      {carouselImages && (
+        <Carousel
+          images={carouselImages}
+          onClose={() => setCarouselImages(null)}
+        />
       )}
 
       {/* Pagination */}

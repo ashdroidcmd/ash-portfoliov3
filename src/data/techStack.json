@@ -1,0 +1,127 @@
+[
+  {
+    "name": "HTML",
+    "image": "https://res.cloudinary.com/dmkri61cj/image/upload/v1749645466/html_dit32q.png",
+    "category": "Web Development"
+  },
+  {
+    "name": "CSS",
+    "image": "https://res.cloudinary.com/dmkri61cj/image/upload/v1749645490/css_wetafm.png",
+    "category": "Web Development"
+  },
+  {
+    "name": "Javascript",
+    "image": "https://res.cloudinary.com/dmkri61cj/image/upload/v1749645467/js_qgtoxu.png",
+    "category": "Web Development"
+  },
+  {
+    "name": "Typescript",
+    "image": "https://res.cloudinary.com/dmkri61cj/image/upload/v1755781809/typescript_gx6ce7.png",
+    "category": "Web Development"
+  },
+  {
+    "name": "React.Js",
+    "image": "https://res.cloudinary.com/dmkri61cj/image/upload/v1749645477/react_wxsvsx.png",
+    "category": "Web Development"
+  },
+  {
+    "name": "SASS",
+    "image": "https://res.cloudinary.com/dmkri61cj/image/upload/v1749645486/sass_bygxe3.png",
+    "category": "Web Development"
+  },
+  {
+    "name": "Tailwind CSS",
+    "image": "https://res.cloudinary.com/dmkri61cj/image/upload/v1749645481/tailwind_bicv0y.png",
+    "category": "Web Development"
+  },
+  {
+    "name": "Bootstrap",
+    "image": "https://res.cloudinary.com/dmkri61cj/image/upload/v1749645470/bootstrap_khsmse.png",
+    "category": "Web Development"
+  },
+  {
+    "name": "Git",
+    "image": "https://res.cloudinary.com/dmkri61cj/image/upload/v1749645483/git_kh2wnh.png",
+    "category": "Tools"
+  },
+  {
+    "name": "Github",
+    "image": "https://res.cloudinary.com/dmkri61cj/image/upload/v1749645465/github_keabr3.png",
+    "category": "Tools"
+  },
+  {
+    "name": "Linux",
+    "image": "https://res.cloudinary.com/dmkri61cj/image/upload/v1752997567/linux_urczss.png",
+    "category": "Tools"
+  },
+  {
+    "name": "Ubuntu",
+    "image": "https://res.cloudinary.com/dmkri61cj/image/upload/v1752997597/ubuntu_eepi6n.png",
+    "category": "Tools"
+  },
+  {
+    "name": "Node.JS",
+    "image": "https://res.cloudinary.com/dmkri61cj/image/upload/v1752997567/node_yoadjr.png",
+    "category": "Web Development"
+  },
+  {
+    "name": "Express.JS",
+    "image": "https://res.cloudinary.com/dmkri61cj/image/upload/v1752997567/express_qzsr6m.png",
+    "category": "Web Development"
+  },
+  {
+    "name": "Nest.Js",
+    "image": "https://res.cloudinary.com/dmkri61cj/image/upload/v1752997567/nestjs_yvnui5.png",
+    "category": "Web Development"
+  },
+  {
+    "name": "Postgres",
+    "image": "https://res.cloudinary.com/dmkri61cj/image/upload/v1752997567/postgres_uewc0s.png",
+    "category": "Web Development"
+  },
+  {
+    "name": "Prisma",
+    "image": "https://res.cloudinary.com/dmkri61cj/image/upload/v1752997593/prisma_wrzimb.png",
+    "category": "Web Development"
+  },
+  {
+    "name": "Postman",
+    "image": "https://res.cloudinary.com/dmkri61cj/image/upload/v1752997568/postman_zkamj7.png",
+    "category": "Tools"
+  },
+  {
+    "name": "Vercel",
+    "image": "https://res.cloudinary.com/dmkri61cj/image/upload/v1752999045/vercel_kxsbyg.png",
+    "category": "Tools"
+  },
+  {
+    "name": "Railway",
+    "image": "https://res.cloudinary.com/dmkri61cj/image/upload/v1752999045/railway_janmak.png",
+    "category": "Tools"
+  },
+  {
+    "name": "n8n",
+    "image": "https://res.cloudinary.com/dmkri61cj/image/upload/v1753007784/n8n_dzuzps.png",
+    "category": "Tools"
+  },
+  {
+    "name": "C - Language",
+    "image": "https://res.cloudinary.com/dmkri61cj/image/upload/v1753007784/c_r0sg86.png",
+    "category": "IoT"
+  },
+  {
+    "name": "Arduino",
+    "image": "https://res.cloudinary.com/dmkri61cj/image/upload/v1753007784/arduino_dm9vic.png",
+    "category": "IoT"
+  },
+  {
+    "name": "Raspberry Pi",
+    "image": "https://res.cloudinary.com/dmkri61cj/image/upload/v1755781809/raspberrypi_ibmo8u.png",
+    "category": "IoT"
+  },
+  {
+    "name": "Espressif Systems",
+    "image": "https://res.cloudinary.com/dmkri61cj/image/upload/v1753007784/esp32_mtb0i6.png",
+    "category": "IoT"
+  }
+]

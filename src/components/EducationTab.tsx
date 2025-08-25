@@ -1,12 +1,7 @@
 import { Link } from "react-router-dom";
-import { useEducationApi } from "../hooks/useEducation";
+import educationData from "../data/education.json";
 
 const EducationTab = () => {
-  const { data: educationData, loading, error } = useEducationApi();
-
-  if (error) return <p className="text-red-500">Error loading education</p>;
-  if (loading) return <p className="text-gray-300">Loading...</p>;
-
   return (
     <section className="space-y-4">
       {educationData.map((item, index) => (
@@ -16,7 +11,7 @@ const EducationTab = () => {
         >
           <div>
             <img
-              src={item.image}
+              src={item.logo}
               alt={item.school}
               className="h-18 w-18 rounded-full border bg-white object-contain"
             />
@@ -25,7 +20,7 @@ const EducationTab = () => {
             <h3 className="text-lg font-semibold">{item.courseName}</h3>
             <p className="mb-1 text-base text-gray-300">{item.school}</p>
             <Link
-              to={item.url}
+              to={item.certificateUrl}
               target="_blank"
               className="btn btn-sm btn-outline hover:bg-white hover:text-black"
             >

@@ -1,27 +1,30 @@
 import { useState } from "react";
-import { useTechStackApi } from "../../src/hooks/useTechStack";
+import techStackData from "../data/techStack.json";
 
 const categories = ["All", "Web Development", "IoT", "Tools"];
 
 const TechStack = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
-  const {
-    data: techStack,
-    loading,
-    error,
-  } = useTechStackApi(selectedCategory === "All" ? "" : selectedCategory);
+
+  // Filter tech stack based on category
+  const filteredTechStack =
+    selectedCategory === "All"
+      ? techStackData
+      : techStackData.filter((item) => item.category === selectedCategory);
 
   return (
     <section className="mb-6">
       <div className="flex flex-row items-center">
-        <p className="mb-4 text-2xl md:text-3xl font-semibold text-white grow">Tech Stack</p>
+        <p className="mb-4 grow text-2xl font-semibold text-white md:text-3xl">
+          Tech Stack
+        </p>
 
         {/* Dropdown UI */}
         <div className="mb-4">
           <select
             value={selectedCategory}
             onChange={(e) => setSelectedCategory(e.target.value)}
-            className="rounded-2xl border border-gray-500 bg-black py-2 px-3 text-white"
+            className="rounded-2xl border border-gray-500 bg-black px-3 py-2 text-white"
           >
             {categories.map((cat) => (
               <option key={cat} value={cat}>
@@ -32,13 +35,9 @@ const TechStack = () => {
         </div>
       </div>
 
-      {/* Loading / Error */}
-      {error && <p className="text-red-500">Error loading tech stack</p>}
-      {loading && <p className="text-gray-400">Loading...</p>}
-
       {/* Tech Stack Items */}
       <div className="flex flex-row flex-wrap gap-2">
-        {techStack.map((item, index) => (
+        {filteredTechStack.map((item, index) => (
           <div
             key={index}
             className="flex flex-row items-center justify-center gap-2 rounded-4xl border border-gray-500 bg-black px-4 py-1 transition-colors duration-300 hover:bg-gray-800"
