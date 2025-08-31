@@ -1,5 +1,6 @@
 import { useState } from "react";
 import techStackData from "../data/techStack.json";
+import { Terminal } from "lucide-react";
 
 const categories = ["All", "Web Development", "IoT", "Tools"];
 
@@ -15,8 +16,8 @@ const TechStack = () => {
   return (
     <section className="mb-6">
       <div className="flex flex-row items-center">
-        <p className="mb-4 grow text-2xl font-semibold text-white md:text-3xl">
-          Tech Stack
+        <p className="grow text-2xl font-semibold text-white md:text-3xl flex flex-row items-center gap-2">
+          <Terminal size={35} className="text-green-500"/>Tech Stack
         </p>
 
         {/* Dropdown UI */}
@@ -40,7 +41,7 @@ const TechStack = () => {
         {filteredTechStack.map((item, index) => (
           <div
             key={index}
-            className="flex flex-row items-center justify-center gap-2 rounded-4xl border border-gray-500 bg-black px-4 py-1 transition-colors duration-300 hover:bg-gray-800"
+            className="flex flex-row items-center justify-center gap-2 rounded-4xl border border-gray-500 bg-black px-4 py-1 transition duration-300 hover:scale-115 hover:bg-gray-800"
           >
             <img src={item.image} alt={item.name} className="h-auto w-8" />
             <p className="text-base text-white">{item.name}</p>

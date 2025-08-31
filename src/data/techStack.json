@@ -50,6 +50,11 @@
     "category": "Tools"
   },
   {
+    "name": "Windows",
+    "image": "https://res.cloudinary.com/dmkri61cj/image/upload/v1756641733/windows_ufqohy.png",
+    "category": "Tools"
+  },
+  {
     "name": "Linux",
     "image": "https://res.cloudinary.com/dmkri61cj/image/upload/v1752997567/linux_urczss.png",
     "category": "Tools"
@@ -60,18 +65,28 @@
     "category": "Tools"
   },
   {
+    "name": "Bash",
+    "image": "https://res.cloudinary.com/dmkri61cj/image/upload/v1756640301/bash_sox5wb.png",
+    "category": "Tools"
+  },
+  {
     "name": "Node.JS",
     "image": "https://res.cloudinary.com/dmkri61cj/image/upload/v1752997567/node_yoadjr.png",
     "category": "Web Development"
   },
   {
     "name": "Express.JS",
-    "image": "https://res.cloudinary.com/dmkri61cj/image/upload/v1752997567/express_qzsr6m.png",
+    "image": "https://res.cloudinary.com/dmkri61cj/image/upload/v1756641733/express_jlapgs.png",
     "category": "Web Development"
   },
   {
     "name": "Nest.Js",
     "image": "https://res.cloudinary.com/dmkri61cj/image/upload/v1752997567/nestjs_yvnui5.png",
+    "category": "Web Development"
+  },
+  {
+    "name": "GraphQL",
+    "image": "https://res.cloudinary.com/dmkri61cj/image/upload/v1756640301/graphql_i6qout.png",
     "category": "Web Development"
   },
   {

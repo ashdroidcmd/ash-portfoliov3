@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, FileUser } from "lucide-react";
+import { Github, Linkedin, Mail, FileUser, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Hero = () => {
@@ -10,16 +10,19 @@ const Hero = () => {
           Ashlee Zoe Gesite
         </p>
         <p className="mb-1 text-2xl">Full Stack Developer</p>
-        <p className="mb-4 text-xl text-gray-300">Bohol, Philippines</p>
+        <p className="mb-4 flex flex-row items-center text-xl text-gray-300 gap-2">
+          <MapPin/>
+          Bohol, Philippines
+        </p>
 
-        <div className="mb-4 flex justify-center space-x-4 md:justify-start">
+        <div className="flex justify-center space-x-4 md:justify-start">
           <Link
             to="https://github.com/ashdroidcmd"
             target="_blank"
             className="tooltip-bottom tooltip cursor-pointer transition duration-150 hover:scale-125"
             data-tip="Github"
           >
-            <Github size={36} />
+            <Github size={36} className="text-purple-500" />
           </Link>
           <Link
             to="https://www.linkedin.com/in/ash-gesite-25a28334b/"
@@ -27,7 +30,7 @@ const Hero = () => {
             className="tooltip-bottom tooltip cursor-pointer transition duration-150 hover:scale-125"
             data-tip="Linkedin"
           >
-            <Linkedin size={36} />
+            <Linkedin size={36} className="text-blue-500" />
           </Link>
           <Link
             to="mailto:z.wolff25@gmail.com"
@@ -36,7 +39,7 @@ const Hero = () => {
             className="tooltip-bottom tooltip cursor-pointer transition duration-150 hover:scale-125"
             data-tip="Gmail"
           >
-            <Mail size={36} />
+            <Mail size={36} className="text-red-500" />
           </Link>
           <Link
             to="https://drive.google.com/file/d/1aD4tjpBAK6ghkgvz51CUDnt1xd83pfb1/view?usp=sharing"
@@ -44,7 +47,7 @@ const Hero = () => {
             className="tooltip-bottom tooltip cursor-pointer transition duration-150 hover:scale-125"
             data-tip="CV"
           >
-            <FileUser size={36} />
+            <FileUser size={36} className="text-green-500" />
           </Link>
         </div>
       </div>

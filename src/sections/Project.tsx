@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { FolderGit2 } from "lucide-react";
 import ProjectCards from "../components/ProjectCards";
 
 const categories = ["All", "Web Development", "IoT"];
@@ -16,8 +17,8 @@ const Project = () => {
     <section className="mb-6">
       {/* Header */}
       <div className="mb-4 flex flex-row items-center">
-        <p className="grow text-2xl font-semibold text-white md:text-3xl">
-          Projects
+        <p className="grow text-2xl font-semibold text-white md:text-3xl flex flex-row items-center gap-2">
+          <FolderGit2 size={35} className="text-blue-400"/>Projects
         </p>
 
         {/* Dropdown */}
