@@ -10,9 +10,9 @@ const Hero = () => {
           Ashlee Zoe Gesite
         </p>
         <p className="mb-1 text-2xl">Full Stack Developer</p>
-        <p className="mb-4 flex flex-row items-center text-xl text-gray-300 gap-2">
-          <MapPin/>
-          Bohol, Philippines
+        <p className="mb-4 flex flex-row justify-center md:justify-start items-center gap-2 text-center text-xl text-gray-300 md:text-left">
+          <MapPin />
+          <span>Bohol, Philippines</span>
         </p>
 
         <div className="flex justify-center space-x-4 md:justify-start">
