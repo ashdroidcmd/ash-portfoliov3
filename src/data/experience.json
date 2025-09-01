@@ -1,8 +1,14 @@
 [
-    {
-        "companyName" : "ACE Medical Center - Bohol",
-        "title" : "Jr. Software Engineer",
-        "dates" : "June 2025 - Present",
-        "logo" : "https://res.cloudinary.com/dmkri61cj/image/upload/v1752759481/logo_uijdtp.png"
-    }
+  {
+    "companyName": "ACE Medical Center - Bohol",
+    "title": "Jr. Software Engineer",
+    "dates": "June 2025 - Present",
+    "logo": "https://res.cloudinary.com/dmkri61cj/image/upload/v1752759481/logo_uijdtp.png"
+  },
+  {
+    "companyName": "TSM Shipping Philippines",
+    "title": "Seafarer | Engine Cadet",
+    "dates": "February 2022 - January 2024",
+    "logo": "https://res.cloudinary.com/dmkri61cj/image/upload/v1756723121/tsm_agiqsf.png"
+  }
 ]
