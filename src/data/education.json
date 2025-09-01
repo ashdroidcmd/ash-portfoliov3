@@ -1,8 +1,14 @@
 [
-    {
-        "courseName" : "Front End Web Development",
-        "school" : "Phililppine Coding Camp",
-        "certificateUrl" : "https://drive.google.com/file/d/1jY47U9yzoy0GgQpziA3JdVHyZD5ATH4R/view?usp=drive_link",
-        "logo" : "https://res.cloudinary.com/dmkri61cj/image/upload/v1752760693/pcc_uttmwe.jpg"
-    }
+  {
+    "courseName": "The Complete Full Stack Web Development",
+    "school": "Udemy - Angela Yu",
+    "certificateUrl": "https://drive.google.com/file/d/1DZbfbMpbfIuhZtTaeqM6l9OV3AbBvkEZ/view?usp=sharing",
+    "logo": "https://res.cloudinary.com/dmkri61cj/image/upload/v1752760703/udemy_umnxyn.png"
+  },
+  {
+    "courseName": "Front End Web Development",
+    "school": "Phililppine Coding Camp",
+    "certificateUrl": "https://drive.google.com/file/d/1jY47U9yzoy0GgQpziA3JdVHyZD5ATH4R/view?usp=drive_link",
+    "logo": "https://res.cloudinary.com/dmkri61cj/image/upload/v1752760693/pcc_uttmwe.jpg"
+  }
 ]

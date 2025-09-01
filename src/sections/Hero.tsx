@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, FileUser, MapPin } from "lucide-react";
+import { Github, Linkedin, Mail, FileUser, MapPin, Code } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Hero = () => {
@@ -9,9 +9,12 @@ const Hero = () => {
         <p className="mb-6 text-4xl font-semibold text-white">
           Ashlee Zoe Gesite
         </p>
-        <p className="mb-1 text-2xl">Full Stack Developer</p>
-        <p className="mb-4 flex flex-row justify-center md:justify-start items-center gap-2 text-center text-xl text-gray-300 md:text-left">
-          <MapPin />
+        <p className="mb-1 flex flex-row items-center justify-center gap-2 text-2xl md:justify-start md:text-left">
+          <Code size={30} className="text-green-400"/>
+          Software Engineer
+        </p>
+        <p className="mb-4 flex flex-row items-center justify-center gap-2 text-center text-xl text-gray-300 md:justify-start md:text-left">
+          <MapPin size={30} className="text-yellow-500"/>
           <span>Bohol, Philippines</span>
         </p>
 
