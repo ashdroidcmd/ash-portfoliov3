@@ -7,7 +7,7 @@ const EducationTab = () => {
       {educationData.map((item, index) => (
         <div
           key={index}
-          className="flex flex-row items-center justify-start gap-2 border-l-4 border-gray-100 pl-4"
+          className="flex flex-row items-center justify-start gap-2 border-l-4 border-gray-100 pl-2"
         >
           <div>
             <img
