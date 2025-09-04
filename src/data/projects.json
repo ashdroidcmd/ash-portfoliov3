@@ -58,7 +58,7 @@
     "title": "Secret Shop",
     "description": "My Capstone Project for Front End Web Dev Bootcamp. Powered by React, Bootstrap and Firebase",
     "liveUrl": "https://secret-shop-pied.vercel.app/",
-    "githubUrl" : "https://github.com/ashdroidcmd/side-shop-ecommerce",
+    "githubUrl": "https://github.com/ashdroidcmd/side-shop-ecommerce",
     "category": "Web Development",
     "createdAt": "July 11, 2025",
     "techStack": ["HTML", "Bootstrap", "React", "Firebase"],
@@ -75,7 +75,15 @@
     "liveUrl": "https://mis-server-room-monitor.vercel.app/",
     "category": "IoT",
     "createdAt": "July 12, 2025",
-    "techStack": ["React", "Node.js", "Express.js", "C", "Arduino", "ESP32", "N8N"],
+    "techStack": [
+      "React",
+      "Node.js",
+      "Express.js",
+      "C",
+      "Arduino",
+      "ESP32",
+      "N8N"
+    ],
     "imagesUrl": [
       "https://res.cloudinary.com/dmkri61cj/image/upload/v1753006707/Screenshot_from_2025-07-20_18-17-28_bnuqoq.png"
     ]
@@ -87,10 +95,11 @@
     "createdAt": "July 13, 2025",
     "techStack": ["React", "Node.js", "Express.js", "Postgres", "Raspberry Pi"],
     "imagesUrl": [
-      "https://res.cloudinary.com/dmkri61cj/image/upload/v1753009413/viber_image_2025-07-11_13-05-07-773_lsw8nb.jpg"
+      "https://res.cloudinary.com/dmkri61cj/image/upload/v1753009413/viber_image_2025-07-11_13-05-07-773_lsw8nb.jpg",
+      "https://res.cloudinary.com/dmkri61cj/image/upload/v1756990127/acepotify-2_vha7hf.png",
+      "https://res.cloudinary.com/dmkri61cj/image/upload/v1756990127/acepotify-2_vha7hf.png"
     ]
-  }
-  ,
+  },
   {
     "title": "Home Dashboard",
     "description": "My Custom Home IOT Dashboard Powered with ESP 32 Sensors, CoinGecko API and OpenWeather API",
@@ -100,5 +109,18 @@
     "imagesUrl": [
       "https://res.cloudinary.com/dmkri61cj/image/upload/v1754224521/Screenshot_from_2025-08-03_20-34-03_bwlrec.png"
     ]
+  },
+  {
+    "title": "Min IO Service",
+    "description": "A reusable service for handling file uploads, downloads, and storage using MinIO ",
+    "category": "Web Development",
+    "createdAt": "July 15, 2025",
+    "techStack": ["Node.js", "Nest.js"],
+    "imagesUrl": [
+      "https://res.cloudinary.com/dmkri61cj/image/upload/v1756990126/minio-1_n4jcsh.png",
+      "https://res.cloudinary.com/dmkri61cj/image/upload/v1756990126/minio-3_tru3rx.png",
+      "https://res.cloudinary.com/dmkri61cj/image/upload/v1756990127/minio-2_sqkhzy.png"
+    ],
+    "githubUrl": "https://github.com/ashdroidcmd/minio-code"
   }
 ]
