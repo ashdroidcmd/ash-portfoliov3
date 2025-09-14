@@ -122,5 +122,29 @@
       "https://res.cloudinary.com/dmkri61cj/image/upload/v1756990127/minio-2_sqkhzy.png"
     ],
     "githubUrl": "https://github.com/ashdroidcmd/minio-code"
+  },
+  {
+    "title": "ACE-Book",
+    "description": "A ticketing service for MIS, Engineering and HR",
+    "category": "Web Development",
+    "createdAt": "July 16, 2025",
+    "techStack": [
+      "React",
+      "Shadcn",
+      "Tanstack",
+      "Node.js",
+      "Nest.js",
+      "GraphQL",
+      "Postgres",
+      "Prisma"
+    ],
+    "imagesUrl": [
+      "https://res.cloudinary.com/dmkri61cj/image/upload/v1757859822/1_kwry2h.png",
+      "https://res.cloudinary.com/dmkri61cj/image/upload/v1757859822/2_iazuvc.png",
+      "https://res.cloudinary.com/dmkri61cj/image/upload/v1757859822/3_gxeipb.png",
+      "https://res.cloudinary.com/dmkri61cj/image/upload/v1757859822/4_wt81zc.png",
+      "https://res.cloudinary.com/dmkri61cj/image/upload/v1757859822/5_cb69hi.png",
+      "https://res.cloudinary.com/dmkri61cj/image/upload/v1757859822/6_vswa0i.png"
+    ]
   }
 ]
