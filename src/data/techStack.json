@@ -115,6 +115,11 @@
     "category": "Tools"
   },
   {
+    "name": "LangChain",
+    "image": "https://res.cloudinary.com/dmkri61cj/image/upload/v1759927255/langchain_cdlqgh.png",
+    "category": "Tools"
+  },
+  {
     "name": "n8n",
     "image": "https://res.cloudinary.com/dmkri61cj/image/upload/v1753007784/n8n_dzuzps.png",
     "category": "Tools"

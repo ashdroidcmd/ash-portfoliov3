@@ -1,5 +1,11 @@
 [
   {
+    "courseName": "Introduction To Cybersecurity",
+    "school": "Cisco Networking Academy",
+    "certificateUrl": "https://drive.google.com/file/d/1x7cvH3S0-MuzM1vTL_3Ly1JDnKyDTE6s/view?usp=sharing",
+    "logo": "https://res.cloudinary.com/dmkri61cj/image/upload/v1759927121/cisco_cezr2q.png"
+  },
+  {
     "courseName": "The Complete Full Stack Web Development",
     "school": "Udemy - Angela Yu",
     "certificateUrl": "https://drive.google.com/file/d/1DZbfbMpbfIuhZtTaeqM6l9OV3AbBvkEZ/view?usp=sharing",
