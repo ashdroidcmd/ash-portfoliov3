@@ -16,8 +16,9 @@ const TechStack = () => {
   return (
     <section className="mb-6">
       <div className="flex flex-row items-center">
-        <p className="grow text-2xl font-semibold text-white md:text-3xl flex flex-row items-center gap-2">
-          <Terminal size={35} className="text-green-500"/>Tech Stack
+        <p className="flex grow flex-row items-center gap-2 text-2xl font-semibold text-white md:text-3xl">
+          <Terminal size={35} className="text-green-500" />
+          Tech Stack
         </p>
 
         {/* Dropdown UI */}
@@ -37,14 +38,22 @@ const TechStack = () => {
       </div>
 
       {/* Tech Stack Items */}
-      <div className="flex flex-row flex-wrap gap-2">
+      <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8">
         {filteredTechStack.map((item, index) => (
           <div
             key={index}
-            className="flex flex-row items-center justify-center gap-2 rounded-4xl border border-gray-500 bg-black px-4 py-1 transition duration-300 hover:scale-115 hover:bg-gray-800"
+            className="card h-28 w-24 border border-gray-500 bg-black shadow-md transition-transform duration-300 hover:scale-110 hover:bg-gray-800"
           >
-            <img src={item.image} alt={item.name} className="h-auto w-8" />
-            <p className="text-base text-white">{item.name}</p>
+            <figure className="p-2">
+              <img
+                src={item.image}
+                alt={item.name}
+                className="h-12 w-12 object-contain"
+              />
+            </figure>
+            <div className="card-body items-center justify-center p-1">
+              <p className="text-center text-sm text-white">{item.name}</p>
+            </div>
           </div>
         ))}
       </div>
